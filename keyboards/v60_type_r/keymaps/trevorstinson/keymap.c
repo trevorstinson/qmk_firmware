@@ -74,3 +74,63 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void led_set_user(uint8_t usb_led) {
 
 }
+
+enum combo_events {
+  LEFT_WORD,
+  RIGHT_WORD,
+  LEFT_LINE,
+  RIGHT_LINE,
+  TOP,
+  BOTTOM
+};
+
+const uint16_t PROGMEM left_word_combo[] = {KC_LGUI, KC_LEFT, COMBO_END};
+const uint16_t PROGMEM right_word_combo[] = {KC_LGUI, KC_RIGHT, COMBO_END};
+const uint16_t PROGMEM left_line_combo[] = {KC_LALT, KC_LEFT, COMBO_END};
+const uint16_t PROGMEM right_line_combo[] = {KC_LALT, KC_RIGHT, COMBO_END};
+const uint16_t PROGMEM top_combo[] = {KC_LALT, KC_UP, COMBO_END};
+const uint16_t PROGMEM bottom_combo[] = {KC_LALT, KC_DOWN, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  [LEFT_WORD] = COMBO_ACTION(left_word_combo),
+  [RIGHT_WORD] = COMBO_ACTION(right_word_combo),
+  [LEFT_LINE] = COMBO_ACTION(left_line_combo),
+  [RIGHT_LINE] = COMBO_ACTION(right_line_combo),
+  [TOP] = COMBO_ACTION(top_combo),
+  [BOTTOM] = COMBO_ACTION(bottom_combo),
+};
+
+void process_combo_event(uint8_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case LEFT_WORD:
+      if (pressed) {
+        tap_code16(LCTL(KC_LEFT));
+      }
+      break;
+    case RIGHT_WORD:
+      if (pressed) {
+        tap_code16(LCTL(KC_RIGHT));
+      }
+      break;
+    case LEFT_LINE:
+      if (pressed) {
+        tap_code16(KC_HOME);
+      }
+      break;
+    case RIGHT_LINE:
+      if (pressed) {
+        tap_code16(KC_END);
+      }
+      break;
+    case TOP:
+      if (pressed) {
+        tap_code16(LCTL(KC_HOME));
+      }
+      break;
+    case BOTTOM:
+      if (pressed) {
+        tap_code16(LCTL(KC_END));
+      }
+      break;
+  }
+}
