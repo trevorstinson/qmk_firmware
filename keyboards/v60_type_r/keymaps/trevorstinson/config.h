@@ -1,4 +1,4 @@
-/* Copyright 2019 Sebastian Williams
+/* Copyright 2017 benlyall, MechMerlin
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,4 +13,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "smd_milk.h"
+#pragma once
+
+// place overrides here
+
+
+#ifdef V60_POLESTAR
+#undef V60_POLESTAR
+#endif
+
+#define COMBO_COUNT 6
+#define TAPPING_TERM 300
+#define COMBO_TERM 300
