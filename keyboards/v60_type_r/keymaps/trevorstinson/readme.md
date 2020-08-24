@@ -1,10 +1,12 @@
-# KB Paradise V60 Type R Default Layout
+# trevorstinson's KB Paradise V60 Type R Polestar Layout
 
-This is the default layout as defined by the KBP V60 Type R manual/keycaps
+This is trevorstinson's layout for the KBP V60 Type R Polestar
 
 ## Keymap Notes
-- Does not support control for in-switch or underglow lighting
-- Keymap is not the same as other KBP V60 keyboards
+- RGB is completely turned off
+- Layer 0 is the default layer for Mac, Layer 1 is the default layer for Windows. 
+- When switching default layer, combos should be turned off for Mac and on for Windows.
+- Layer 3 is a numpad layer which can be activated by holding the spacebar.
 
 
 ### Build
