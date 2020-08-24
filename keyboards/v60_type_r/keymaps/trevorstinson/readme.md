@@ -8,4 +8,4 @@ This is the default layout as defined by the KBP V60 Type R manual/keycaps
 
 
 ### Build
-To build this keymap, simply run `make v60_type_r:default`.
+To build this keymap, simply run `make v60_type_r:trevorstinson`.
